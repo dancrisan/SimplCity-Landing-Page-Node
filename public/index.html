@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!--
+	Highly inspired by HTML5 UP
+	html5up.net | ThreadLocks
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SimplCity</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">by ThreadLocks</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"> COMING SPRING 2015</a></li>
+						<li><a href="#five" class="button special">Sign Up</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="content">
+					<header>
+						<h2>SimplCity</h2>
+						<p>A food crawler, mobile and offline.<br />
+						Me, my food & my city. Simply my SimplCity.</p>
+					</header>
+					<span class="image"><img src="images/pic011.jpg" alt="" /></span>
+				</div>
+				<a href="#five" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- Five -->
+			<section id="five" class="wrapper style2 special fade">
+				<div class="container">
+					<header>
+						<h2>SimplCity</h2>
+						<p>Be the first to know when we launch. Be our guests.</p>
+					</header>
+					<div class="container 50%" >
+						<div class="row uniform 50%">
+							<div class="8u 12u$(3)"><input type="email" name="email" id="email" value="" placeholder="No spam. Only good news =]" onkeydown="if (event.keyCode == 13) document.getElementById('send_email').click()"/></div>
+							<div class="4u$ 12u$(3)"><input type="button" value="Notify me" id="send_email" class="fit special" style="outline:0;" /></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>Built with Love & Red Bull in Montreal</li><li>&copy; 2015 - All rights reserved.</a></li>
+				</ul>
+			</footer>
+
+	</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script>// <![CDATA[
+			$(document).ready(function(){
+				var subject;
+				
+				$("#send_email").click(function(){      
+					subject = $("#email").val();
+					$.get("http://localhost:3000/send", {subject:subject});
+					document.getElementById("send_email").value="Thank You!";
+					
+					return false;
+				});
+				
+			});
+			
+	</script>
+</html>
