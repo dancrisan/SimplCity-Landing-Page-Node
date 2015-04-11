@@ -9,7 +9,6 @@ Why awesome?
 
 var express=require('express');
 var nodemailer = require("nodemailer");
-var path = require("path");
 var app=express();
 
 /*
@@ -28,17 +27,21 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
 
 /*------------------Routing Started ------------------------*/
 
-app.use(express.static(path.join(__dirname, 'public')));
+var port = process.env.PORT || 8080;
+
+app.use(express.static(__dirname + '/public'));
 
 app.get('/send',function(req,res){
 	var mailOptions={
-		to : "whereYouWantToSendEmailsAddress@live.com",
+        to : "whereYouWantToSendEmailsAddress@live.com",
 		subject : req.query.subject,
+		//text : req.query.text
 	}
 	smtpTransport.sendMail(mailOptions);
 });
+
 /*--------------------Routing Over----------------------------*/
 
-app.listen(3000,function(){
-console.log("Express Started on Port 3000");
+app.listen(port, function(){
+    console.log("Express Started on Port 8080");
 });

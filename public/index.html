@@ -88,7 +88,7 @@
 				
 				$("#send_email").click(function(){      
 					subject = $("#email").val();
-					$.get("http://localhost:3000/send", {subject:subject});
+					$.get("http://localhost:8080/send", {subject:subject});
 					document.getElementById("send_email").value="Thank You!";
 					
 					return false;
